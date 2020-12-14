@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,20 +7,26 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent implements OnInit {
+  @Output() recipeEmitter = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe(
       'Vegeterian Lasagna',
       'Really Tasty Vegetarian Lasagna',
-      'https://www.lunchbox.eu/wp-content/uploads/2018/02/lasagna-piece-1.jpg',
+      'https://www.lunchbox.eu/wp-content/uploads/2018/02/lasagna-piece-1.jpg'
     ),
     new Recipe(
-      'Vegeterian Lasagna',
-      'Really Tasty Vegetarian Lasagna',
-      'https://www.lunchbox.eu/wp-content/uploads/2018/02/lasagna-piece-1.jpg',
+      'Banitsa',
+      'Bulgarian Banitsa - the best choice for quick and nutritious meal',
+      'https://s.rozali.com/p/b/a/banica-206966-500x334.jpg'
     ),
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectedRecipe(recipe: Recipe) {
+    this.recipeEmitter.emit(recipe);
+  }
 }
