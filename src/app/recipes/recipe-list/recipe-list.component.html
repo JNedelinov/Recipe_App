@@ -9,10 +9,6 @@
     <!-- * one way of doing it -->
     <!-- <app-recipe-item [recipesList]="recipes"></app-recipe-item> -->
     <!-- * Max's way of doing it -->
-    <app-recipe-item
-      *ngFor="let currRecipe of recipes"
-      [recipe]="currRecipe"
-      (click)="selectedRecipe(currRecipe)"
-    ></app-recipe-item>
+    <app-recipe-item></app-recipe-item>
   </div>
 </div>
