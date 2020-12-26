@@ -5,7 +5,7 @@ import { Ingredient } from './ingredient.model';
 @Injectable()
 export class RecipesService {
   recipes: Recipe[] = [
-  // private recipes: Recipe[] = [
+    // private recipes: Recipe[] = [
     new Recipe(
       'Vegeterian Lasagna',
       'Really Tasty Vegetarian Lasagna',
@@ -32,5 +32,9 @@ export class RecipesService {
   onSelectedRecipe(id: number) {
     this.selectedRecipe = this.recipes[id];
     this.recipeEmitter.emit(this.selectedRecipe);
+  }
+
+  getRecipe(id: number) {
+    return this.recipes[id];
   }
 }

@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  selectedLink: string = 'recipes';
+  // selectedLink: string = 'recipes';
 
   constructor() {}
 
-  getLink(link: string): void {
-    this.selectedLink = link;
-  }
+  // getLink(link: string): void {
+  //   this.selectedLink = link;
+  // }
 }

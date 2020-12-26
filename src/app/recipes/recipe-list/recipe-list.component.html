@@ -1,14 +1,15 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+    <button class="btn btn-success" (click)="newRecipe()">New Recipe</button>
   </div>
 </div>
 <hr />
 <div class="row">
   <div class="card-group col-xs-12">
-    <!-- * one way of doing it -->
-    <!-- <app-recipe-item [recipesList]="recipes"></app-recipe-item> -->
-    <!-- * Max's way of doing it -->
-    <app-recipe-item></app-recipe-item>
+    <app-recipe-item
+      *ngFor="let currRecipe of recipes; let i = index"
+      [recipe]="currRecipe"
+      [index]="i"
+    ></app-recipe-item>
   </div>
 </div>

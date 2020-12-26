@@ -6,14 +6,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styles: [],
 })
 export class HeaderComponent {
-  title: string = 'The Header';
+  // title: string = 'The Header';
   // collapsed: boolean = true;
 
-  @Output() selectedLink = new EventEmitter<string>();
+  // @Output() selectedLink = new EventEmitter<string>();
 
   constructor() {}
 
-  selectLink(link: string) {
-    this.selectedLink.emit(link);
-  }
+  // selectLink(link: string) {
+  //   this.selectedLink.emit(link);
+  // }
 }
